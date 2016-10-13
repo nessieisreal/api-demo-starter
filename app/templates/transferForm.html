@@ -1,0 +1,29 @@
+<div class="well well-sm">
+	
+	<p>From: <span id="transferFromAccount"></span></p>
+	<button class="btn btn-default" id="selectTransferFromBtn">Select Account</button>
+
+	<br>
+	<br>
+
+	<p>To: <span id="transferToAccount"></span></p>
+	<button class="btn btn-default" id="selectTransferToBtn">Select Account</button>
+
+	<br>
+	<br>
+
+	<form action="/transfer" method="POST">
+		<p>Amount: <span id="transferAmount"></span></p>
+		<input id="amount" type="text" name="amount" />
+		<br><br>
+		<p>Description: <span id="transferDescription"></span></p>
+		<input id="description" type="text" name="description" />
+		<br><br>
+
+		<!-- hidden fields populated by JS -->
+		<input id="toAccount" type="hidden" name="toAccount" />
+		<input id="fromAccount" type="hidden" name="fromAccount" />
+
+		<input type="submit" class="btn btn-primary" name="Confirm Transfer">
+	</form>
+</div>

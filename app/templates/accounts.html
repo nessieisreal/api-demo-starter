@@ -1,0 +1,13 @@
+{% if accounts|length == 0 %}
+		<tr><td>No accounts available.</td></tr>
+{% else %}
+
+	{% for account in accounts %}
+		<div class="row">
+			<div class="well well-sm account" id="{{ account._id }}">
+				<p class="nickname" style="font-size: 20px;">{{ account.nickname }}</p>
+				<p class="balance" style="font-size: 40px;">{{ format_price(account.balance) }}</p>
+			</div>
+		</div>
+	{% endfor %}
+{% endif %}

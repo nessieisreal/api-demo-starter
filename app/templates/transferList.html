@@ -1,0 +1,22 @@
+<table class="table table-striped">
+	<tr>
+		<th>Pay From</th>
+		<th>Pay To</th>
+		<th>Amount</th>
+		<th>Status</th>
+	</tr>
+
+	{% if transfers|length == 0 %}
+		<tr><td>No transfer data available.</td></tr>
+	{% else %}
+		{% for transfer in transfers %}
+			<tr>
+				<td>{{ transfer.payer_id }}</td>
+				<td>{{ transfer.payee_id }}</td>
+				<td>${{ transfer.amount }}</td>
+				<td class='status'>{{ transfer.status }}</td>
+			</tr>
+		{% endfor %}
+	{% endif %}
+  
+</table>

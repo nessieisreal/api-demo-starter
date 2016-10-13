@@ -1,0 +1,56 @@
+<html>	
+	<head>
+		<!-- Twitter Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+		<!-- Custom JS -->
+		<script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+
+		<title>Capital One Money Transfer</title>
+	</head>
+
+	<body style="padding: 20px;">
+		<div class="container-fluid">
+			
+			<!-- Column Titles Row -->
+			<div class="row">
+				<div class="col-md-1">&nbsp;</div>
+				<div class="col-md-3">
+					<h3>My Accounts</h3>
+					<br>
+				</div>
+				<div class="col-md-1">&nbsp;</div>
+				<div class="col-md-6">
+					<h3>Transfer Money</h3>
+					<br>
+				</div>
+			</div>
+
+			<!-- Column Content Row -->
+			<div class="row">
+				<div class="col-md-1">&nbsp;</div>
+		
+				<!-- Accounts List Column -->
+				<div class="col-md-3">
+					{% include 'accounts.html' %}
+		    	</div>
+			
+				<div class="col-md-1">&nbsp;</div>
+
+				<!-- Money Transfer Column -->
+				<div class="col-md-6">
+					{% include 'transferForm.html' %}
+
+					<br>
+					<h3>Transfers</h3>
+					<br>
+
+					{% include 'transferList.html' %}
+				</div>
+			</div>
+    	</div>
+	</body>
+</html>
