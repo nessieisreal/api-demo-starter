@@ -13,7 +13,7 @@ A simple banking dashboard showing a user's accounts and transfers.  It also all
 3. `touch config.py`
 4. Open the file you just created (config.py) and add your Nessie API key as a variable.  
     `API_KEY = "my_api_key"`  
-5. `pip install requirements.txt`
+5. `pip install -r requirements.txt`
 6. `python run.py`
 7. Navigate to **localhost:5000** to view the dashboard.
 
