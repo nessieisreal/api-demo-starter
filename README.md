@@ -10,7 +10,7 @@ A simple banking dashboard showing a user's accounts and transfers.  It also all
 
 1. `git clone https://github.kdc.capitalone.com/tld509/api-demo-app.git`
 2. `cd api-demo-app`
-3. Create a file `config.py` under the `/app` directory.
+3. Create a file `config.py` in the root directory of the project.
 4. Open the file you just created (config.py) and add your Nessie API key as a variable.  
     `API_KEY = "my_api_key"`  
 5. `pip install -r requirements.txt`
