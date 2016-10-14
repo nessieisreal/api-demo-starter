@@ -10,13 +10,6 @@ import datetime
 # get the API Key from the config file
 apiKey = app.config["API_KEY"]
 
-# enum for the medium of transfer
-#  * balance - currency
-#  * rewards - rewards points
-class Medium(Enum):
-	BALANCE = "balance"
-	REWARDS = "rewards"
-
 # http://www.davidadamojr.com/handling-cors-requests-in-flask-restful-apis/
 @app.after_request
 def after_request(response):
