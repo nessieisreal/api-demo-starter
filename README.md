@@ -30,7 +30,7 @@ A simple banking dashboard showing a user's accounts and transfers.  It also all
 
 ## Running the Application
 
-From the root directory run  
+From the root directory run
 
 	```
 	python run.py
