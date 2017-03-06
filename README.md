@@ -38,7 +38,11 @@ Navigate to the root of the project and run:
 
 Navigate to **localhost:5000** to view the dashboard.
 
+![Starter App](/app/img/starter.jpg)  
+  
 
-![Alt text](/app/img/home-screen.jpg)
+Once completed, the application should look like this:
 
-![Alt text](/app/img/transfer-list.jpg)
+![Finished Home Screen](/app/img/home-screen.jpg)
+
+![Finished Transfer List](/app/img/transfer-list.jpg)
