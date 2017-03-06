@@ -4,13 +4,37 @@ import sys
 import json
 import requests
 import random
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-d', '--delete', help='delete existing data prior to creating new data', action='store_true')
+args = parser.parse_args()
 
 apiKey = app.config["API_KEY"]
 
 BASE_URL = 'http://api.reimaginebanking.com'
 API_KEY_PARAM = '?key={}'.format(apiKey)
 
+# ===== REFRESH DATA =====
+
+if args.delete:
+	print "\nDeleting:"
+	print "========="
+	
+	objectsToDelete = ['Customers', 'Accounts']
+
+	for i in range (0, len(objectsToDelete)):
+		deleteUrl = BASE_URL + '/data?type={}'.format(objectsToDelete[i] + API_KEY_PARAM)
+		deleteResponse = requests.delete(deleteUrl)
+		if deleteResponse.status_code != 204:
+			print "!! Error removing {}".format(objectsToDelete[i])	+ " !!"
+		else:
+			print "Removed all {}".format(objectsToDelete[i])
+
 # ===== CREATE CUSTOMER =====
+
+print "\nCreating:"
+print "========="
 
 customerUrl = BASE_URL + '/customers' + API_KEY_PARAM
 
@@ -34,7 +58,16 @@ customerPostResponse = requests.post(
 # get the response and find the ID to create accounts for
 jsonResponse = json.loads(customerPostResponse.text)
 customerObj = jsonResponse['objectCreated']
-print('Customer Created: ' + customerObj['first_name'] + ' ' + customerObj['last_name'])
+
+name = customerObj['first_name'] + ' ' + customerObj['last_name']
+
+if customerPostResponse.status_code != 201:
+	print "!! Error creating {}".format(name)	+ " !!"
+	print "Cannot create accounts without customer.  Terminating..."
+	print"\n"
+	sys.exit()
+else:
+	print('Customer Created: ' + name)
 
 customerId = jsonResponse["objectCreated"]["_id"]
 
@@ -44,8 +77,6 @@ accountNames = ['Quincy Checking', 'Kirkland Savings', 'Lowell Checking', 'Mathe
 accountType = ['Checking', 'Savings', 'Checking', 'Savings', 'Checking']
 
 accountsUrl = BASE_URL + '/customers/{}/accounts'.format(customerId) + API_KEY_PARAM
-
-print("")
 
 # create 5 accounts
 for i in range(0, 5):
@@ -65,7 +96,10 @@ for i in range(0, 5):
 	accountJsonResponse = json.loads(accountPostResponse.text)
 	accountObj = accountJsonResponse['objectCreated']
 
-	print('Account Created: ' + accountObj['nickname'])
+	if accountPostResponse.status_code != 201:
+		print "!! Error creating {}".format(accountObj['nickname'])	+ " !!"
+	else:
+		print('Account Created: ' + accountObj['nickname'])
 
 
 
