@@ -1,8 +1,11 @@
 # API Demo App for Harvard HCS Bootcamp
 
-A simple banking dashboard showing a user's accounts and transfers.  It also allows user's to create new transfers.  This app demonstrates basic usage of APIs in a Python Flask application.  Makes use of the Nessie API for all data.
+A simple banking dashboard showing a user's accounts and transfers.  It also allows user's to create new transfers.  This app demonstrates basic usage of APIs in a Python Flask application.  Makes use of the Nessie API for all data.  
+
+For step-by-step implementation instructions, see the [Wiki](https://github.com/nessieisreal/api-demo-starter/wiki).
 
 ## Requirements  
+
 * Python 2.7
 * Pip for the appropriate version of Python (https://pip.pypa.io/en/stable/installing/)
 
@@ -22,7 +25,7 @@ A simple banking dashboard showing a user's accounts and transfers.  It also all
 	API_KEY = "my_api_key"
 	```  
 
-	Retrive your API key by creating an account at http://api.reimaginebanking.com.
+	Retrieve your API key by creating an account at http://api.reimaginebanking.com.
 
 4. Install required packages.
 	
