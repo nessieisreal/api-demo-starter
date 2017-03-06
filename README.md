@@ -23,7 +23,7 @@ A simple banking dashboard showing a user's accounts and transfers.  It also all
 	```  
 
 4. Install required packages.
-
+	
 	```
 	pip install -r requirements.txt
 	```  
@@ -32,10 +32,10 @@ A simple banking dashboard showing a user's accounts and transfers.  It also all
 
 Navigate to the root of the project and run:
 
-	```
-	python run.py
-	```  
-
+```
+python run.py
+```  
+	
 Navigate to **localhost:5000** to view the dashboard.
 
 
