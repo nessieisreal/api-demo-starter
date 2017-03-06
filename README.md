@@ -22,6 +22,8 @@ A simple banking dashboard showing a user's accounts and transfers.  It also all
 	API_KEY = "my_api_key"
 	```  
 
+	Retrive your API key by creating an account at http://api.reimaginebanking.com.
+
 4. Install required packages.
 	
 	```
