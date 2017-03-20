@@ -14,7 +14,7 @@ For step-by-step implementation instructions, see the [Wiki](https://github.com/
 1. Clone the project.
 
 	```
-	git clone https://github.kdc.capitalone.com/tld509/api-demo-app.git
+	git clone https://github.com/nessieisreal/api-demo-starter.git
 	```  
 
 2. Navigate to the root of the project and create a file `config.py`.
