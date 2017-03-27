@@ -24,7 +24,7 @@ if args.delete:
 	objectsToDelete = ['Customers', 'Accounts']
 
 	for i in range (0, len(objectsToDelete)):
-		deleteUrl = BASE_URL + '/data?type={}'.format(objectsToDelete[i] + API_KEY_PARAM)
+		deleteUrl = BASE_URL + '/data' + API_KEY_PARAM + '&type={}'.format(objectsToDelete[i])
 		deleteResponse = requests.delete(deleteUrl)
 		if deleteResponse.status_code != 204:
 			print "!! Error removing {}".format(objectsToDelete[i])	+ " !!"
