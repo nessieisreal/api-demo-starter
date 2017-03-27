@@ -32,6 +32,18 @@ For step-by-step implementation instructions, see the [Wiki](https://github.com/
 	```
 	pip install -r requirements.txt
 	```  
+	
+If you run into errors with this command, try upgrading Pip.  
+
+* Mac  
+    ```
+    pip install -U pip
+    ```  
+* Windows  
+    ```
+    python -m pip install -U pip
+    ```  
+Also, using `sudo` in front of these commands may solve some issues. 
 
 ## Running the Application
 
